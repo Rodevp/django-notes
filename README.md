@@ -11,6 +11,7 @@ django notes app
 requiere de [Django 3.2](https://www.djangoproject.com/) para correr.
 
 Primero debemos entrar al entorno virtual
+----
 Windows:
 ```sh
 .venv\Scripts\activate
