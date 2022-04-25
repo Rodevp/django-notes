@@ -1,7 +1,6 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 <div class="header-bar">
     <div>
         <h1>Hello {{request.user|title}}</h1>
@@ -24,22 +23,15 @@
     {% endif %}
 </div>
 
-
-<form style="display: none;" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
-    {% csrf_token %}
-    <input type="hidden" id="positionInput" name="position">
-</form>
-
-
 <div id="tasklist" class="task-items-wrapper">
     {% for task in tasks %}
     <div class="task-wrapper" data-position="{{task.pk}}">
         <div class="task-title">
             {% if task.complete %}
                 <div class="task-complete-icon"></div>
-                <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> {% else %}
+                <i><s><a href="{% url 'task-update' task.id %}">{{task.title}}</a></s></i> {% else %}
                 <div class="task-incomplete-icon"></div>
-                <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
+                <a href="{% url 'task-update' task.id %}">{{task.title}}</a> {% endif %}
         </div>
         <div class="task-controls">
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
