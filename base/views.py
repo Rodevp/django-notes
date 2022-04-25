@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
+from .models import Task
 
-
-def task_list(request) :
-    return ""
+class TaskList(ListView) :
+    model = Task
