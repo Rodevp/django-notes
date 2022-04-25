@@ -6,9 +6,6 @@ django notes app
 - [Django] - Framework web hecho en python!
 - [Sortable js] - pequeña libreria para hacer drag and drog
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
 ## Instalación
 
 requiere de [Django 3.2](https://www.djangoproject.com/) para correr.
